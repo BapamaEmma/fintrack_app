@@ -15,7 +15,7 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   bool _isPasswordVisible = false;
-  bool _isChecked = false; // Checkbox for Terms and Conditions
+  final bool _isChecked = false; // Checkbox for Terms and Conditions
   bool _isLoading = false; // Global loading state
 
   String email = '', password = '', name = '';
@@ -246,7 +246,7 @@ class _SignUpPageState extends State<SignUpPage> {
       onPressed: _isLoading
           ? null
           : () {
-              if (_formKey.currentState!.validate() ) {
+              if (_formKey.currentState!.validate()) {
                 email = emailController.text.trim();
                 password = passwordController.text.trim();
                 name = nameController.text.trim();
